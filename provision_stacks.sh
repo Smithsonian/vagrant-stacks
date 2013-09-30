@@ -3,6 +3,11 @@
 # install prereqs
 sudo apt-get update
 sudo apt-get -y install make g++
+
+# prep non-interactive mysql-server
+echo mysql-server mysql-server/root_password password vagrant | sudo debconf-set-selections
+echo mysql-server mysql-server/root_password_again password vagrant | sudo debconf-set-selections
+
 sudo apt-get -q -y install mysql-server php5 apache2
 mysqladmin -u root password vagrant
 sudo apt-get -y install php-mdb2 php-mdb2-driver-mysql
