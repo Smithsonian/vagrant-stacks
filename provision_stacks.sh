@@ -28,18 +28,18 @@ make
 make install
 
 # configure mysql
-cd $STACKSPATH/share/mysql
+cd $STACKSPATH/share/stacks/sql
 cp mysql.cnf.dist mysql.cnf
 cd ~
 
-mysql -u root -p -e "GRANT ALL ON *.* TO 'vagrant'@'localhost' IDENTIFIED BY 'vagrant';"
+mysql -u root -pvagrant -e "GRANT ALL ON *.* TO 'vagrant'@'localhost' IDENTIFIED BY 'vagrant';"
 
 # configure apache
 sudo cp /vagrant/conf/stacks.conf /etc/apache2/conf.d/
-sudo apachectl restart
+sudo apache2ctl restart
 
 # configure php
 cp $STACKSPATH/share/stacks/php/constants.php.dist $STACKSPATH/share/stacks/php/constants.php
 
-chown www $STACKSPATH/share/stacks/php/export
+sudo chown www-data $STACKSPATH/share/stacks/php/export
 
