@@ -18,9 +18,14 @@ Installation
 ```
 
 Use
-===
-Point your browser at <http://localhost:8082/>
-You should see: "**It works!...**"
+---
+Point your browser at <http://localhost:8082/stacks>
+You should see the Stacks webpage
+
+Login to the VM command line `vagrant ssh` to run stacks command line tools
+
+Vagrant basics
+--------------
 
 To access the command line of the vagrant VM type: `vagrant ssh`
 
