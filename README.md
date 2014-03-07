@@ -24,4 +24,8 @@ You should see: "**It works!...**"
 
 To access the command line of the vagrant VM type: `vagrant ssh`
 
-To use data files from you computer in the vagrant VM move them into the vagrant-stacks folder and the files will be accessible in the /vagrant folder in the VM 
+To use data files from you computer in the vagrant VM move them into the vagrant-stacks folder and the files will be accessible in the /vagrant folder in the VM
+
+To suspend the VM (save the current state) use: `vagrant suspend`
+
+To destory the VM (lose all data not stored in /vagrant) use: `vagrant destory` 
