@@ -10,15 +10,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
+  config.vm.box = "trusty64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
+  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
   config.vm.provider "virtualbox" do |v|
-    v.customize ["modifyvm", :id, "--memory", 1024]
-    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"] #For Ubuntu 12.10 for DNS to work in the guest OS: http://askubuntu.com/questions/238040/how-do-i-fix-name-service-for-vagrant-client
+  	v.cpus = 1
+	v.memory = 1024
+	v.name = "stacks"
+	v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"] #For Ubuntu 12.10 for DNS to work in the guest OS: http://askubuntu.com/questions/238040/how-do-i-fix-name-service-for-vagrant-client
   end
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -36,5 +38,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network :public_network
 
   config.vm.provision "shell", path: "provision_stacks.sh"
+
+  #Uncomment this to get to local files on your Mac from the directory /hostfiles on the VM
+  #config.vm.synced_folder "/Users/", "/hostfiles"
 
 end
