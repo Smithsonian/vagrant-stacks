@@ -1,7 +1,7 @@
 vagrant-stacks
 ==============
 
-Vagrant launcher for STACKS 1.27 (http://creskolab.uoregon.edu/stacks)
+Vagrant launcher for STACKS 1.34 (http://creskolab.uoregon.edu/stacks)
 
 This creates a VM on your computer running STACKS that can be used to run the command line tools and web interface of STACKS.
 
@@ -45,7 +45,7 @@ The example will take the folder /Users on the host computer and make it availab
 VM Configuration (optional)
 ------------
 * Specify the number of CPUs to use with "v.cpus = 1"
-* Specify the RAM the VM should use with "v.memory = 1024"
+* Specify the RAM the VM should use with "v.memory = 2048"
 * From the host use `vagrant reload` to use the new settings
 
 Stacks configuration used
@@ -63,4 +63,4 @@ To suspend the VM (save the current state) use: `vagrant suspend`
 
 To reboot the VM with new configuration from the file Vagrantfile (e.g. RAM, CPUs)  : `vagrant reload`
 
-To destroy the VM (**lose all data** not stored in /vagrant or /hostfiles if you configured that) use: `vagrant destory` 
+To destroy the VM (**lose all data** not stored in /vagrant or /hostfiles if you configured that) use: `vagrant destroy` 

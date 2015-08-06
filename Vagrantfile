@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider "virtualbox" do |v|
   	v.cpus = 1
-	v.memory = 1024
+	v.memory = 2048
 	v.name = "stacks"
 	v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"] #For Ubuntu 12.10 for DNS to work in the guest OS: http://askubuntu.com/questions/238040/how-do-i-fix-name-service-for-vagrant-client
   end
